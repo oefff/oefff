@@ -9,7 +9,7 @@
 
 	<packaging>pom</packaging>
 
-	<name>oefff</name>
+	<name>Online Editor for Feature Files (Parent)</name>
 	<description>Online Editor For Feature Files</description>
 
 
@@ -18,9 +18,18 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<kotlin.version>1.2.20</kotlin.version>
+
+        <cucumber.version>2.4.0</cucumber.version>
+		<kotlin.version>1.2.20</kotlin.version>
+		<oefff.version>${project.version}</oefff.version>
+
+
+
+		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
 	</properties>
 
 	<modules>
+		<module>acceptance-tests</module>
 		<module>oefff-backend</module>
 		<module>oefff-frontend</module>
 	</modules>
