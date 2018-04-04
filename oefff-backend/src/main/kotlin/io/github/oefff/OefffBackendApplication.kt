@@ -1,4 +1,4 @@
-package io.github.oefff.oefffbackend
+package io.github.oefff
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
