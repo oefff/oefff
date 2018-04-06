@@ -1,6 +1,7 @@
 package io.github.oefff.review
 
 import gherkin.ast.Feature
+import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 

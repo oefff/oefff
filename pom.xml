@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.github.oefff</groupId>
-	<artifactId>oefff</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+    <groupId>io.github.oefff</groupId>
+    <artifactId>oefff</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-	<packaging>pom</packaging>
+    <packaging>pom</packaging>
 
-	<name>Online Editor for Feature Files (Parent)</name>
-	<description>Online Editor For Feature Files</description>
+    <name>Online Editor for Feature Files (Parent)</name>
+    <description>Online Editor For Feature Files</description>
 
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<kotlin.version>1.2.20</kotlin.version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <java.version>1.8</java.version>
 
         <cucumber.version>2.4.0</cucumber.version>
-		<kotlin.version>1.2.20</kotlin.version>
-		<oefff.version>${project.version}</oefff.version>
+        <kotlin.version>1.2.31</kotlin.version>
+        <oefff.version>${project.version}</oefff.version>
 
 
+        <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+    </properties>
 
-		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
-	</properties>
-
-	<modules>
-		<module>acceptance-tests</module>
-		<module>oefff-backend</module>
-		<module>oefff-frontend</module>
-	</modules>
+    <modules>
+        <module>acceptance-tests</module>
+        <module>oefff-backend</module>
+        <module>oefff-frontend</module>
+    </modules>
 
 </project>

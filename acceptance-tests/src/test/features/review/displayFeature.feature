@@ -9,4 +9,4 @@ Scenario: Marco views the displayFeature-feature
 
   Given the displayFeature has been written and is part of the existing project
    When Marco selects that feature for review
-   Then the displayFeature should be displayed
+   Then the displayFeature should be displayed and have the name: Display an existing feature
