@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('oefff-frontend App', () => {
+describe('Oefff Frontend App', () => {
   let page: AppPage;
 
   beforeEach(() => {
