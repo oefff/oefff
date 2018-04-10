@@ -78,6 +78,19 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-reflect</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -105,6 +118,19 @@
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
 
         <plugins>
+
+
+            <!-- Disable default Java Compiler in Kotlin project -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
