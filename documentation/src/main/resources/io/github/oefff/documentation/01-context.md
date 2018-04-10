@@ -1,6 +1,5 @@
 ## Context
 
-A webapp, which allows **Business People** to read, writeand verify _Cucumber Feature Files._
-
+A webapp, which allows **Business People** to read, write and verify _Cucumber Feature Files._
 
 ![](embed:OefffSystemContextView)
