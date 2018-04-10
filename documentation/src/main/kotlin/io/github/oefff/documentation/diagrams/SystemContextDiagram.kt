@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component
 @Component
 class SystemContextDiagram(val oefff: SoftwareSystem) : ViewProvider {
     override fun createViews(viewSet: ViewSet) {
-        val systemContextView = viewSet.createSystemContextView(oefff, "Oefff", "Oefff")
+        val systemContextView = viewSet.createSystemContextView(oefff, "OefffSystemContextView", "Oefff")
         systemContextView.addAllPeople()
         systemContextView.addAllSoftwareSystems()
     }

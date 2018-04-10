@@ -8,6 +8,9 @@ import org.springframework.boot.SpringBootConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.ComponentScans
+import com.structurizr.documentation.StructurizrDocumentationTemplate
+
+
 
 @SpringBootConfiguration
 @ComponentScans(ComponentScan("cc.catalysts.boot.structurizr"), ComponentScan("io.github.oefff"))
@@ -15,7 +18,7 @@ class ArchitectureDocumentationGenerator {
 
     @Bean
     fun workspace(): Workspace {
-        return Workspace("SystemContext", "Online Editor For Feature Files")
+        return Workspace("Oefff", "Online Editor For Feature Files")
 
     }
 
@@ -28,6 +31,7 @@ class ArchitectureDocumentationGenerator {
     fun views(workspace: Workspace): ViewSet {
         return workspace.views
     }
+
 
     companion object {
 
