@@ -1,11 +1,20 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {FeatureDetailDisplayComponent} from "./feature-detail-display/feature-detail-display.component";
+import {FeatureService, MockFeatureService} from "./service/feature.service";
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
+      var mockFeatureService = new MockFeatureService({name: 'Mocked That Thing'});
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent, FeatureDetailDisplayComponent
       ],
+        providers: [
+            {
+                provide: FeatureService, useValue: mockFeatureService
+            }
+        ],
     }).compileComponents();
   }));
   it('should create the app', async(() => {
