@@ -34,7 +34,7 @@ describe('FeatureService', () => {
 
         let featureObservable = featureService.getFeature("http/readFeatureFromServer");
         featureObservable.subscribe(data => feature = data);
-        const getRequestForFeature = httpTestingController.expectOne('/feature/http/readFeatureFromServer');
+        const getRequestForFeature = httpTestingController.expectOne('http://localhost:8080/feature/http/readFeatureFromServer');
 
         // Assert that the request is a GET.
         expect(getRequestForFeature.request.method).toEqual('GET');
