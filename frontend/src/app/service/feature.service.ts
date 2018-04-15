@@ -10,7 +10,7 @@ export class FeatureService {
     }
 
     getFeature(featureName: string) : Observable<Feature> {
-        return this.httpClient.get<Feature>("http://localhost:8080/feature/" + featureName)
+        return this.httpClient.get<Feature>("http://localhost:8080/api/feature/" + featureName)
     }
 }
 
