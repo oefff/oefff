@@ -7,11 +7,10 @@
         <groupId>io.github.oefff</groupId>
         <artifactId>oefff</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-
     </parent>
 
-    <groupId>io.github.oefff</groupId>
-    <artifactId>oefff-frontend</artifactId>
+    <artifactId>frontend</artifactId>
+
     <packaging>jar</packaging>
 
     <name>Angular Frontend for OEFFF</name>
@@ -59,7 +58,7 @@
         </plugins>
         <resources>
             <resource>
-                <directory>target/oefff-frontend</directory>
+                <directory>dist</directory>
                 <targetPath>static</targetPath>
             </resource>
         </resources>

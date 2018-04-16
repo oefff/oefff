@@ -19,9 +19,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>io.github.oefff</groupId>
-            <artifactId>oefff-backend</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>${this.project.groupId}</groupId>
+            <artifactId>backend</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -124,6 +124,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>default-compile</id>
@@ -204,10 +205,10 @@
                             <arguments>
                                 <argument>java</argument>
                                 <argument>-jar</argument>
-                                <argument>${project.basedir}/../oefff-backend/target/oefff-backend-${oefff.version}.jar</argument>
+                                <argument>${project.basedir}/../backend/target/backend-${oefff.version}.jar</argument>
                                 <argument>--server.port=${server.http.port}</argument>
                             </arguments>
-                            <healthcheckUrl>http://localhost:${server.http.port}/feature/review/displayFeature</healthcheckUrl>
+                            <healthcheckUrl>http://localhost:${server.http.port}/api/feature/review/displayFeature</healthcheckUrl>
                         </configuration>
                     </execution>
                     <!--Stop Process-->

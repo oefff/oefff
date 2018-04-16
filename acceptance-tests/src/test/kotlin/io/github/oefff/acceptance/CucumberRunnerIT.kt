@@ -8,7 +8,7 @@ import org.junit.runner.RunWith
 @CucumberOptions(
         features = ["src/test/features"],
         plugin = ["html:target/testreport", "json:target/cucumber.json", "junit:target/cucumber-results.xml"],
-        tags = ["~@workInProgress", "~@additionalBusinessScenario"],
+        tags = ["not @workInProgress"],
         strict = true,
         monochrome = true)
 class CucumberRunnerIT

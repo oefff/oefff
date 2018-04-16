@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { FeatureService } from './service/feature.service';
 import { FeatureDetailDisplayComponent } from './feature-detail-display/feature-detail-display.component';
+import {OefffBackend} from "./oefff.backend";
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { FeatureDetailDisplayComponent } from './feature-detail-display/feature-
       BrowserModule,
       HttpClientModule,
   ],
-  providers: [FeatureService],
+  providers: [FeatureService, OefffBackend],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

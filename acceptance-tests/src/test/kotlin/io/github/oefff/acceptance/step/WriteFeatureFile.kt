@@ -29,7 +29,7 @@ class WriteFeatureFile(
         }
 
         When("^Marco selects that feature for review$") {
-            url = "/feature/review/displayFeature"
+            url = "/api/feature/review/displayFeature"
         }
 
         Then("^the displayFeature should be displayed and have the name: (.*)$") { name : String ->

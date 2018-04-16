@@ -14,6 +14,8 @@
 
 
     <properties>
+        <this.project.groupId>${project.groupId}</this.project.groupId>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -22,8 +24,11 @@
         <cucumber.version>2.4.0</cucumber.version>
         <kotlin.version>1.2.31</kotlin.version>
         <oefff.version>${project.version}</oefff.version>
+        <spring-boot.version>2.0.1.RELEASE</spring-boot.version>
 
 
+        <kotlin.compiler.jvmTarget>${java.version}</kotlin.compiler.jvmTarget>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
     </properties>
 
@@ -37,6 +42,20 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>${this.project.groupId}</groupId>
+                <artifactId>backend</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${this.project.groupId}</groupId>
+                <artifactId>frontend</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.jetbrains.kotlin</groupId>
                 <artifactId>kotlin-stdlib</artifactId>
