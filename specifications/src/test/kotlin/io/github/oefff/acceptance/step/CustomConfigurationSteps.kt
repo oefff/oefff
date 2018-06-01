@@ -10,7 +10,7 @@ import io.github.oefff.review.FeatureService
 import io.github.oefff.review.PROJECT_LOCATION
 import java.io.File
 
-class CustomConfiguration() : En {
+class CustomConfigurationSteps() : En {
 
     private val readConfig = readConfig(File(PROJECT_LOCATION))
 
@@ -24,7 +24,7 @@ class CustomConfiguration() : En {
         Given("^the project contains feature files underneath the configured specification location$") {
             val epics = FeatureService().listEpics()
 
-            assertThat(epics, hasElement("configuration"))
+            assertThat(epics.map{it.name}, hasElement("configuration"))
 
         }
 

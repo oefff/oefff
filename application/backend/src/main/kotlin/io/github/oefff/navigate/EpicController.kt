@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController
 class EpicController(val featureService: FeatureService) {
 
     @GetMapping()
-    fun getAll() : List<String> = featureService.listEpics()
+    fun getAll() : List<Epic> = featureService.listEpics()
 
 }

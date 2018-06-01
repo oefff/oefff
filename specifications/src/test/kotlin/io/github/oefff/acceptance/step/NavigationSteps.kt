@@ -6,6 +6,7 @@ import com.natpryce.hamkrest.isIn
 import cucumber.api.DataTable
 import cucumber.api.java8.En
 import io.github.oefff.acceptance.OefffFeature
+import io.github.oefff.navigate.Epic
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.HttpMethod
@@ -28,10 +29,13 @@ class NavigationSteps(@Value("\${test.server.port}") val port: String,
 
             val uri = "http://localhost:${port}${url}"
             val epics = restTemplate.exchange(uri,
-                    HttpMethod.GET, null, object : ParameterizedTypeReference<List<String>>() {
+                    HttpMethod.GET, null, object : ParameterizedTypeReference<List<Epic>>() {
 
             }).body
-            assertThat(epics!!, allElements(isIn(expectedEpicNames)))
+
+            val epicNames = epics!!.map { it.name }
+
+            assertThat(epicNames, allElements(isIn(expectedEpicNames)))
         }
     }
 

@@ -5,12 +5,15 @@ import gherkin.Parser
 import gherkin.TokenMatcher
 import gherkin.ast.Feature
 import gherkin.ast.GherkinDocument
+import io.github.oefff.navigate.Epic
 import io.github.oefff.project.readConfig
+import org.apache.commons.io.filefilter.SuffixFileFilter
 import org.springframework.stereotype.Service
 import java.io.BufferedReader
 import java.io.File
 
 const val PROJECT_LOCATION =  "/Users/mabe/projects/com/github/oefff/oefff/"
+const val EXTENTION = ".feature"
 
 @Service
 class FeatureService {
@@ -34,9 +37,17 @@ class FeatureService {
 
     }
 
-    fun listEpics() =
+    fun listEpics() : List<Epic> =
         File(basePath).listFiles()
                 .filter { it.isDirectory }
-                .map { it.name }
+                .map {
+                    Epic(it.name, listFeatures(it))
+
+                }
+
+
+    private fun listFeatures(epicDirectory: File): List<String> {
+        return epicDirectory.list(SuffixFileFilter(EXTENTION)).asList().map { it.substringBefore(EXTENTION) }
+    }
 
 }
