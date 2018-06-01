@@ -22,7 +22,7 @@
         <dependency>
             <groupId>${this.project.groupId}</groupId>
             <artifactId>backend</artifactId>
-            <scope>provided</scope>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -115,7 +115,6 @@
 
     <build>
 
-        <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
 
         <plugins>
@@ -206,7 +205,7 @@
                             <arguments>
                                 <argument>java</argument>
                                 <argument>-jar</argument>
-                                <argument>${project.basedir}/../application/backend/target/backend-${oefff.version}.jar</argument>
+                                <argument>${project.basedir}/../application/backend/target/backend-${oefff.version}-exec.jar</argument>
                                 <argument>--server.port=${server.http.port}</argument>
                             </arguments>
                             <healthcheckUrl>http://localhost:${server.http.port}/api/feature/review/displayFeature</healthcheckUrl>

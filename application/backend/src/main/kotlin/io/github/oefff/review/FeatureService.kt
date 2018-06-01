@@ -5,17 +5,19 @@ import gherkin.Parser
 import gherkin.TokenMatcher
 import gherkin.ast.Feature
 import gherkin.ast.GherkinDocument
+import io.github.oefff.project.readConfig
 import org.springframework.stereotype.Service
 import java.io.BufferedReader
 import java.io.File
+
+const val PROJECT_LOCATION =  "/Users/mabe/projects/com/github/oefff/oefff/"
 
 @Service
 class FeatureService {
     val parser = Parser(AstBuilder())
     val matcher = TokenMatcher()
 
-
-    private val basePath = "/Users/mabe/projects/com/github/oefff/oefff/specifications/src/test/features/"
+    private val basePath = PROJECT_LOCATION + readConfig(File(PROJECT_LOCATION)).specificationPath
     private val featureSuffix = ".feature"
 
 
@@ -31,5 +33,10 @@ class FeatureService {
 
 
     }
+
+    fun listEpics() =
+        File(basePath).listFiles()
+                .filter { it.isDirectory }
+                .map { it.name }
 
 }

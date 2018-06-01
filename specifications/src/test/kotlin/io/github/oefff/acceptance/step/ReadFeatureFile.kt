@@ -2,17 +2,14 @@ package io.github.oefff.acceptance.step
 
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
-import cucumber.api.PendingException
 import cucumber.api.java8.En
-import gherkin.ast.Feature
 import io.github.oefff.acceptance.OefffFeature
-import mu.KLogger
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.client.RestTemplate
 import java.net.URI
 
-class WriteFeatureFile(
+class ReadFeatureFile(
         @Value("\${test.server.port}") val port: String,
         private val homepage: Homepage,
         private val restTemplate: RestTemplate) : En {
@@ -28,11 +25,16 @@ class WriteFeatureFile(
             homepage.get()
         }
 
-        When("^Marco selects that feature for review$") {
-            url = "/api/feature/review/displayFeature"
+        When("^Marco selects the '(.*)' feature for review$") { name : String ->
+
+            when(name) {
+                "displayFeature" -> url = "/api/feature/review/$name"
+                "configureProject" -> url = "/api/feature/configuration/$name"
+            }
+
         }
 
-        Then("^the displayFeature should be displayed and have the name: (.*)$") { name : String ->
+        Then("^the feature should be displayed and have the name: (.*)$") { name : String ->
 
             logger.info("Doing the THEN")
 

@@ -6,6 +6,6 @@
             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:property-placeholder location="classpath:config/application-local.properties"/>
-    <context:component-scan base-package="io.github.oefff"/>
+    <context:component-scan base-package="io.github.oefff.acceptance"/>
 
 </beans>
