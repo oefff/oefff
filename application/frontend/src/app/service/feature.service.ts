@@ -11,7 +11,7 @@ export class FeatureService {
     }
 
     getFeature(featureName: string) : Observable<Feature> {
-        return this.httpClient.get<Feature>(this.oefffBackend.URL + "/api/feature/" + featureName)
+        return this.httpClient.get<Feature>(this.oefffBackend.URL + "api/feature/" + featureName)
     }
 }
 

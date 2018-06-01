@@ -1,0 +1,11 @@
+<h2>All Epics</h2>
+<ol>
+  <li *ngFor="let epic of epics"><span class="epic"> {{epic.name}}</span>
+    <ul>
+      <li *ngFor="let feature of epic.features" class="feature">{{feature}}</li>
+    </ul>
+  </li>
+
+</ol>
+
+
