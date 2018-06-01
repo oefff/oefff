@@ -6,9 +6,8 @@
 
     <parent>
         <groupId>io.github.oefff</groupId>
-        <artifactId>oefff</artifactId>
+        <artifactId>application</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-
     </parent>
 
     <artifactId>backend</artifactId>
@@ -20,8 +19,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-
 
         <jackson.version>2.9.5</jackson.version>
     </properties>

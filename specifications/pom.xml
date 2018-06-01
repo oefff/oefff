@@ -206,7 +206,7 @@
                             <arguments>
                                 <argument>java</argument>
                                 <argument>-jar</argument>
-                                <argument>${project.basedir}/../backend/target/backend-${oefff.version}.jar</argument>
+                                <argument>${project.basedir}/../application/backend/target/backend-${oefff.version}.jar</argument>
                                 <argument>--server.port=${server.http.port}</argument>
                             </arguments>
                             <healthcheckUrl>http://localhost:${server.http.port}/api/feature/review/displayFeature</healthcheckUrl>

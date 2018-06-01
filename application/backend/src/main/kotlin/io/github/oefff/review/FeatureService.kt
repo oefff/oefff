@@ -15,7 +15,7 @@ class FeatureService {
     val matcher = TokenMatcher()
 
 
-    private val basePath = "/Users/mabe/projects/com/github/oefff/oefff/acceptance-tests/src/test/features/"
+    private val basePath = "/Users/mabe/projects/com/github/oefff/oefff/specifications/src/test/features/"
     private val featureSuffix = ".feature"
 
 

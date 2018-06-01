@@ -33,10 +33,9 @@
     </properties>
 
     <modules>
-        <module>specifications</module>
-        <module>backend</module>
-        <module>frontend</module>
+        <module>application</module>
         <module>documentation</module>
+        <module>specifications</module>
     </modules>
 
 
