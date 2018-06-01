@@ -21,7 +21,6 @@ class ReadFeatureFile(
 
     init {
         Given("^the displayFeature has been written and is part of the existing project$") {
-            logger.info("Doing the  GIVEN")
             homepage.get()
         }
 
