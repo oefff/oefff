@@ -10,10 +10,11 @@
 
     </parent>
 
-    <artifactId>acceptance-tests</artifactId>
+    <artifactId>specifications</artifactId>
     <packaging>jar</packaging>
 
-    <name>Acceptance Tests for Oefff</name>
+    <name>Specifications by Example for Oefff</name>
+    <description>Executable Acceptance Tests using Cucumber</description>
 
 
     <dependencies>

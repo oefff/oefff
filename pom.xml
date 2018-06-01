@@ -33,7 +33,7 @@
     </properties>
 
     <modules>
-        <module>acceptance-tests</module>
+        <module>specifications</module>
         <module>backend</module>
         <module>frontend</module>
         <module>documentation</module>
