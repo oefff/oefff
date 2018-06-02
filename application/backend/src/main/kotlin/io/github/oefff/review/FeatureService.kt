@@ -5,6 +5,7 @@ import gherkin.Parser
 import gherkin.TokenMatcher
 import gherkin.ast.Feature
 import gherkin.ast.GherkinDocument
+import io.github.oefff.workspace.FileSystemConfiguration
 import io.github.oefff.navigate.Epic
 import io.github.oefff.project.readConfig
 import org.apache.commons.io.filefilter.SuffixFileFilter
@@ -12,15 +13,15 @@ import org.springframework.stereotype.Service
 import java.io.BufferedReader
 import java.io.File
 
-const val PROJECT_LOCATION =  "/Users/mabe/projects/com/github/oefff/oefff/"
+
 const val EXTENTION = ".feature"
 
 @Service
-class FeatureService {
+class FeatureService(fileSystemConfiguration: FileSystemConfiguration = FileSystemConfiguration()) {
     val parser = Parser(AstBuilder())
     val matcher = TokenMatcher()
 
-    private val basePath = PROJECT_LOCATION + readConfig(File(PROJECT_LOCATION)).specificationPath
+    private val basePath = fileSystemConfiguration.getProjectLocation() + readConfig(fileSystemConfiguration).specificationPath
     private val featureSuffix = ".feature"
 
 

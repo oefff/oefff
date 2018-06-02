@@ -4,15 +4,16 @@ import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.hasElement
 import com.natpryce.hamkrest.isA
 import cucumber.api.java8.En
+import io.github.oefff.workspace.FileSystemConfiguration
 import io.github.oefff.project.Configuration
 import io.github.oefff.project.readConfig
 import io.github.oefff.review.FeatureService
-import io.github.oefff.review.PROJECT_LOCATION
-import java.io.File
 
-class CustomConfigurationSteps() : En {
+class CustomConfigurationSteps(
+        private val fileSystemConfiguration: FileSystemConfiguration = FileSystemConfiguration(true)
+    ) : En {
 
-    private val readConfig = readConfig(File(PROJECT_LOCATION))
+    private val readConfig = readConfig(fileSystemConfiguration)
 
     init {
         Given("^the Oefff git repository has custom configuration") {
@@ -22,9 +23,9 @@ class CustomConfigurationSteps() : En {
         }
 
         Given("^the project contains feature files underneath the configured specification location$") {
-            val epics = FeatureService().listEpics()
+            val epics = FeatureService(fileSystemConfiguration).listEpics()
 
-            assertThat(epics.map{it.name}, hasElement("configuration"))
+            assertThat(epics.map { it.name }, hasElement("configuration"))
 
         }
 

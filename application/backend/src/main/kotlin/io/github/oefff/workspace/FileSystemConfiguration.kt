@@ -1,4 +1,4 @@
-package io.github.oefff.config
+package io.github.oefff.workspace
 
 import org.springframework.stereotype.Component
 import java.io.File
