@@ -1,13 +1,15 @@
-Feature: Oefff should be able to find feature file from custom location
+Feature: Clone a git repository in to the local workspace
 
-  In order to be free to use a custom project directory layout
+  In order to be start using Oefff for a project
   As the Lead Developer
-  I want to configure the location of feature files
+  I want to clone a repository into a local workspace
 
 
-Scenario: Oefff is configured to use /specifications/src/test/features
+Scenario: Clone Oefff in to local workspace
 
-  Given the Oefff git repository has custom configuration
-    And the project contains feature files underneath the configured specification location
-   When Marco selects the 'configureProject' feature for review
-   Then the feature should be displayed and have the name: Oefff should be able to find feature file from
+  Given there is a GitHub repository for 'oefff/oefff'
+   When Marco adds project 'Oefff' to the workspace
+   Then the features of project 'Oefff' should be available via the online editor
+
+
+
