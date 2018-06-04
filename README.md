@@ -31,9 +31,15 @@ Max 5 lines in Scenario and max 1 'Then'-statement.
 ```
 
 
+
+
 ### Reference Information ###
 
-* (https://spring.io/blog/2015/06/08/cors-support-in-spring-framework)
+* [https://www.codeaffine.com/2014/12/09/jgit-authentication/]
+* [https://dzone.com/articles/accessing-git-repos-with-java-using-ssh-keys]
+
+
+* [https://spring.io/blog/2015/06/08/cors-support-in-spring-framework]
 * [https://blog.thoughtram.io/angular/2016/11/28/testing-services-with-http-in-angular-2.html]
 * [http://blog.ng-book.com/how-to-mock-http-requests-in-protractor/]
 * [https://github.com/angular/protractor/issues/125]
