@@ -205,7 +205,7 @@
                             <arguments>
                                 <argument>java</argument>
                                 <argument>-jar</argument>
-                                <argument>${project.basedir}/../application/backend/target/backend-${oefff.version}-exec.jar</argument>
+                                <argument>${project.basedir}/../application/backend/target/backend-exec.jar</argument>
                                 <argument>--server.port=${server.http.port}</argument>
                                 <argument>--spring.profiles.active=local</argument>
                             </arguments>
