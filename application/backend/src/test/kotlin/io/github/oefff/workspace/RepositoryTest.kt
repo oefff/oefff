@@ -3,7 +3,6 @@ package io.github.oefff.workspace
 import org.eclipse.jgit.api.CloneCommand
 import org.eclipse.jgit.api.CloneCommand.Callback
 import org.eclipse.jgit.lib.AnyObjectId
-import org.eclipse.jgit.lib.ProgressMonitor
 import org.eclipse.jgit.lib.TextProgressMonitor
 import org.junit.Ignore
 import org.junit.Test
@@ -24,10 +23,19 @@ class RepositoryTest {
 
         val monitor = TextProgressMonitor(System.out.writer())
         val callback = LoggingCallback()
+
+        // val jschConfigSessionFactory = DefaultSshSessionFactory()
+
+//        val transportConfigCallback = TransportConfigCallback { it: Transport? ->
+//            if ( it is SshTransport ) {
+//                it.sshSessionFactory = jschConfigSessionFactory
+//            }
+//        }
         val cloneCommand = CloneCommand().setURI("git@github.com:oefff/oefff.git")
                 .setProgressMonitor(monitor)
                 .setDirectory(oefffProjectDir)
                 .setCallback(callback)
+
 
 
         val git = cloneCommand.call()
