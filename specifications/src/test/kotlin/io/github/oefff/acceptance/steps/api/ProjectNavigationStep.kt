@@ -21,7 +21,7 @@ class ProjectNavigationStep( private val fetcher: OefffFetcher) : En {
         }
 
         When("Marco opens Oefff to edit the specifications") {
-            url = "/api/project"
+            url = "/api/projects"
         }
 
         Then("Marco should be able to select of project '(.*)'") { projectName : String ->

@@ -12,6 +12,6 @@ import org.springframework.web.bind.annotation.RestController
 class EpicController(val featureService: FeatureService) {
 
     @GetMapping("/{projectName}")
-    fun getAllEpics(@PathVariable projectName: String): List<Epic> = featureService.listEpics(projectName)
+    fun getAllEpics(@PathVariable projectName: String): List<Epic> = featureService.listEpicsInProject(projectName)
 
 }

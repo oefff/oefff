@@ -21,6 +21,6 @@ class FeatureController(private val featureService: FeatureService) {
         val featureName = "$epic/$feature"
         logger.info("Going to retrieve feature: $featureName")
 
-        return featureService.read("oefff", featureName)
+        return featureService.read("oefff", epic, feature)
     }
 }

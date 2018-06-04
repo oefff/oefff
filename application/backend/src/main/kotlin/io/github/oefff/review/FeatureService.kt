@@ -28,7 +28,12 @@ class FeatureService(private val workspaceLocationConfiguration: WorkspaceLocati
 
     private val logger = KotlinLogging.logger {  }
 
-    fun read(projectName: String, fileReference: String): Feature {
+
+    fun read(projectName: String, epicName: String, featureName: String): Feature {
+        return readFeature(projectName, "$epicName/$featureName")
+    }
+
+    fun readFeature(projectName: String, fileReference: String): Feature {
 
         val path = workspaceLocation + projectName + "/" + readConfig(workspaceLocationConfiguration).specificationPath + fileReference + featureSuffix
         val fis = File(path).inputStream()
@@ -41,24 +46,26 @@ class FeatureService(private val workspaceLocationConfiguration: WorkspaceLocati
 
     }
 
-    fun listEpics(projectName: String) : List<Epic> {
+    fun listEpicsInProject(projectName: String) : List<Epic> {
 
         val projectDirectory = File(workspaceLocation + projectName)
+        return listEpics(projectDirectory)
+    }
+
+    fun listEpics(projectDirectory: File): List<Epic> {
         val pathToSpecifications = readConfig(projectDirectory).specificationPath
         return File(projectDirectory.absolutePath + "/" + pathToSpecifications).listFiles()
                 .filter { it.isDirectory }
                 .map {
-                    Epic(it.name, listFeatures(it))
+                    Epic(it.name, listFeatureNames(it))
 
                 }
     }
 
 
-    private fun listFeatures(epicDirectory: File): List<String> {
-
-        logger.info("Goring to fetch all features from ${epicDirectory.name}")
-
-        return epicDirectory.list(SuffixFileFilter(EXTENTION)).asList().map { it.substringBefore(EXTENTION) }
+    fun listFeatureNames(directory: File): List<String> {
+        logger.debug("Going to fetch all featureNames from ${directory.name}")
+        return directory.list(SuffixFileFilter(EXTENTION)).asList().map { it.substringBefore(EXTENTION) }
     }
 
 }
