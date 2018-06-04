@@ -35,9 +35,11 @@ class NavigationSteps(@Value("\${test.server.port}") val port: String,
 
             val epicNames = epics!!.map { it.name }
 
-            assertThat(epicNames, allElements(isIn(expectedEpicNames)))
+            assertThat(expectedEpicNames, allElements(arePresentIn(epicNames)))
         }
     }
 
 
 }
+
+inline fun <T> arePresentIn(it: Iterable<T>) = isIn(it)

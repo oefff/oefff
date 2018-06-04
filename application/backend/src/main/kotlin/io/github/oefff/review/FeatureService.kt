@@ -5,7 +5,7 @@ import gherkin.Parser
 import gherkin.TokenMatcher
 import gherkin.ast.Feature
 import gherkin.ast.GherkinDocument
-import io.github.oefff.workspace.FileSystemConfiguration
+import io.github.oefff.workspace.WorkspaceLocationConfiguration
 import io.github.oefff.navigate.Epic
 import io.github.oefff.project.readConfig
 import org.apache.commons.io.filefilter.SuffixFileFilter
@@ -17,11 +17,11 @@ import java.io.File
 const val EXTENTION = ".feature"
 
 @Service
-class FeatureService(fileSystemConfiguration: FileSystemConfiguration = FileSystemConfiguration()) {
+class FeatureService(workspaceLocationConfiguration: WorkspaceLocationConfiguration = WorkspaceLocationConfiguration()) {
     val parser = Parser(AstBuilder())
     val matcher = TokenMatcher()
 
-    private val basePath = fileSystemConfiguration.getProjectLocation() + readConfig(fileSystemConfiguration).specificationPath
+    private val basePath = workspaceLocationConfiguration.workspaceLocation + readConfig(workspaceLocationConfiguration).specificationPath
     private val featureSuffix = ".feature"
 
 

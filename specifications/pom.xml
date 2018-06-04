@@ -207,6 +207,7 @@
                                 <argument>-jar</argument>
                                 <argument>${project.basedir}/../application/backend/target/backend-${oefff.version}-exec.jar</argument>
                                 <argument>--server.port=${server.http.port}</argument>
+                                <argument>--spring.profiles.active=local</argument>
                             </arguments>
                             <healthcheckUrl>http://localhost:${server.http.port}/api/feature/review/displayFeature</healthcheckUrl>
                         </configuration>

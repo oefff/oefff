@@ -3,13 +3,14 @@ package io.github.oefff.review
 import com.natpryce.hamkrest.*
 import com.natpryce.hamkrest.assertion.assert
 import com.natpryce.hamkrest.assertion.assertThat
+import io.github.oefff.workspace.WorkspaceLocationConfiguration
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
 
 class FeatureServiceTest {
 
-    private val featureService = FeatureService()
+    private val featureService = FeatureService(WorkspaceLocationConfiguration(useLocalProject = true))
 
 
     @Test

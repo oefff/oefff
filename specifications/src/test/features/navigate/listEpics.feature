@@ -11,7 +11,6 @@ Scenario: Marco wants to find the navigate epic
   Given the Online Editor For Feature File is configured to edit itself
    When Marco looks at the epic overview
    Then he should be able to see:
-    | epic            |
     | configuration   |
     | navigate        |
     | review          |
