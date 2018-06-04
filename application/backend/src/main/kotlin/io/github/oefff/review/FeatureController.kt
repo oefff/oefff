@@ -19,8 +19,8 @@ class FeatureController(private val featureService: FeatureService) {
             @PathVariable feature: String): Feature {
 
         val featureName = "$epic/$feature"
-        logger.info("Going to retrieve feature: ${featureName}")
+        logger.info("Going to retrieve feature: $featureName")
 
-        return featureService.read(featureName)
+        return featureService.read("oefff", featureName)
     }
 }

@@ -4,6 +4,7 @@ import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import cucumber.api.java8.En
 import io.github.oefff.acceptance.steps.gui.Homepage
+import io.github.oefff.api.Feature
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.client.RestTemplate
@@ -39,7 +40,7 @@ class ReadFeatureFile(
 
 
             val url = "http://localhost:${port}${url}"
-            val feature = restTemplate.getForObject(URI(url), OefffFeature::class.java)
+            val feature = restTemplate.getForObject(URI(url), Feature::class.java)
 
             assertThat(feature?.name, equalTo(name))
 

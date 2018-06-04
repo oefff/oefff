@@ -6,7 +6,7 @@ import java.io.File
 
 
 const val WORKSPACE_ARGUMENT_NAME = "OEFFF_WORKSPACE_LOCATION"
-const val LOCAL_WORKSPACE_LOCATION =  "/Users/mabe/projects/com/github/oefff/oefff/"
+const val LOCAL_WORKSPACE_LOCATION =  "/Users/mabe/projects/com/github/oefff/"
 
 class WorkspaceLocationConfiguration(private val useLocalProject : Boolean = false) {
 

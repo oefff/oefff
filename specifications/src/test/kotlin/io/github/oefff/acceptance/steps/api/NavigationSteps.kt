@@ -5,33 +5,27 @@ import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.isIn
 import cucumber.api.DataTable
 import cucumber.api.java8.En
-import io.github.oefff.navigate.Epic
-import org.springframework.beans.factory.annotation.Value
+import io.github.oefff.api.Epic
 import org.springframework.core.ParameterizedTypeReference
-import org.springframework.http.HttpMethod
-import org.springframework.web.client.RestTemplate
 
-class NavigationSteps(@Value("\${test.server.port}") val port: String,
-                      private val restTemplate: RestTemplate) : En {
+class NavigationSteps(private val fetcher: OefffFetcher) : En {
 
     var url = ""
 
+    private val listOfEpicResponseType: ParameterizedTypeReference<List<Epic>> = object : ParameterizedTypeReference<List<Epic>>() {}
+
     init {
-        When("Marco looks at the epic overview") {
-            url = "/api/epic"
+        When("Marco looks at the epic overview of '(.*)'") { projectName: String ->
+            url = "/api/$projectName/epic"
         }
+
 
         Then("^he should be able to see:$") { expectedEpics: DataTable ->
 
-            val expectedEpicNames = expectedEpics.asList(String::class.java)
+            val expectedEpicNames = asStrings(expectedEpics)
 
-            val uri = "http://localhost:${port}${url}"
-            val epics = restTemplate.exchange(uri,
-                    HttpMethod.GET, null, object : ParameterizedTypeReference<List<Epic>>() {
-
-            }).body
-
-            val epicNames = epics!!.map { it.name }
+            val epics  = fetcher.fetch(url, listOfEpicResponseType)
+            val epicNames = epics.map { it.name }
 
             assertThat(expectedEpicNames, allElements(arePresentIn(epicNames)))
         }
@@ -40,4 +34,5 @@ class NavigationSteps(@Value("\${test.server.port}") val port: String,
 
 }
 
-inline fun <T> arePresentIn(it: Iterable<T>) = isIn(it)
+private inline fun <T> arePresentIn(it: Iterable<T>) = isIn(it)
+private inline fun asStrings(it: DataTable) : List<String> = it.asList(String::class.java)

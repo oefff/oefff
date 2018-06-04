@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.PropertyAccessor
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
-import io.github.oefff.acceptance.steps.api.OefffFeature
+import io.github.oefff.api.Feature
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.client.RestTemplate
@@ -50,7 +50,7 @@ class RestClientConfiguration {
                 "children":[{"location":{"line":8,"column":1},"keyword":"Scenario","name":"Marco views the displayFeature-feature","description":null,"steps":[{"location":{"line":10,"column":3},"keyword":"Given ","text":"the displayFeature has been written and is part of the existing project","argument":null},{"location":{"line":11,"column":4},"keyword":"When ","text":"Marco selects that feature for review","argument":null},{"location":{"line":12,"column":4},"keyword":"Then ","text":"the displayFeature should be displayed","argument":null}],"tags":[]}]}
                 """
 
-            val feature = objectMapper.readValue(json, OefffFeature::class.java)
+            val feature = objectMapper.readValue(json, Feature::class.java)
             println(feature.name)
 
         }

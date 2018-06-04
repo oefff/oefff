@@ -1,4 +1,4 @@
-@current
+@workInProgresss
 Feature: Display the list of epics of an application
 
   In order to find a specific feature to review
@@ -9,7 +9,7 @@ Feature: Display the list of epics of an application
 Scenario: Marco wants to find the navigate epic
 
   Given the Online Editor For Feature File is configured to edit itself
-   When Marco looks at the epic overview
+   When Marco looks at the epic overview of 'oefff'
    Then he should be able to see:
     | configuration   |
     | navigate        |

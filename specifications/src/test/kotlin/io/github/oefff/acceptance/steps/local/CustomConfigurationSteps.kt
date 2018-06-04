@@ -23,7 +23,7 @@ class CustomConfigurationSteps(
         }
 
         Given("^the project contains feature files underneath the configured specification location$") {
-            val epics = FeatureService(workspaceLocationConfiguration).listEpics()
+            val epics = FeatureService(workspaceLocationConfiguration).listEpics("oefff")
 
             assertThat(epics.map { it.name }, hasElement("configuration"))
 
