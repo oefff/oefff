@@ -1,6 +1,7 @@
 package io.github.oefff.documentation
 
-import com.structurizr.model.Location
+import com.structurizr.model.Location.Internal
+import com.structurizr.model.Location.External
 import com.structurizr.model.Model
 import com.structurizr.model.Person
 import com.structurizr.model.SoftwareSystem
@@ -15,7 +16,7 @@ class Actors {
 
     @Bean
     fun productOwner(model: Model): Person {
-        val productOwnerPerson = model.addPerson(Location.Internal, "Product Owner", "Persons ultimately responsible for the product")
+        val productOwnerPerson = model.addPerson(Internal, "Product Owner", "Persons ultimately responsible for the product")
         productOwnerPerson.addTags(PERSON)
         return productOwnerPerson
     }
@@ -23,9 +24,16 @@ class Actors {
 
     @Bean
     fun gitRepository(model: Model): SoftwareSystem {
-        val gitRepository = model.addSoftwareSystem(Location.External, "Git Repository", "Remote server containing the source code of a project")
+        val gitRepository = model.addSoftwareSystem(External, "Git Repository", "Remote server containing the source code of a project")
         gitRepository.addTags(SOFTWARE_SYSTEM)
         return gitRepository
+    }
+
+    @Bean
+    fun developer(model: Model): Person {
+        val developer = model.addPerson(Internal, "Developer", "Implements the actual features")
+        developer.addTags(PERSON)
+        return developer
     }
 
 
