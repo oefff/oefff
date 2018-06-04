@@ -1,16 +1,16 @@
 @workInProgress
-Feature: List all current project from local workspace
+Feature: List all projects from local workspace
 
-  In order to be start
+  In order to be edit specifications of the proper project
   As the Product Owner
-  I want to be able to select a project
+  I want to be able to select a project from the list of configured projects
 
 
-  Scenario: Clone Oefff in to local workspace
+  Scenario: Marco wants to edit the Specifications of Oefff in Oefff
 
-    Given there is a GitHub repository for 'oefff/oefff'
-    When Marco adds project 'Oefff' to the workspace
-    Then the features of project 'Oefff' should be available via the online editor
+    Given the project 'oefff' is present in the configured workspace
+     When Marco opens Oefff to edit the specifications
+     Then Marco should be able to select of project 'Oefff'
 
 
 

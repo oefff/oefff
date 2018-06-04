@@ -1,17 +1,15 @@
-package io.github.oefff.acceptance.step
+package io.github.oefff.acceptance.steps.api
 
 import com.natpryce.hamkrest.allElements
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.isIn
 import cucumber.api.DataTable
 import cucumber.api.java8.En
-import io.github.oefff.acceptance.OefffFeature
 import io.github.oefff.navigate.Epic
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.HttpMethod
 import org.springframework.web.client.RestTemplate
-import java.net.URI
 
 class NavigationSteps(@Value("\${test.server.port}") val port: String,
                       private val restTemplate: RestTemplate) : En {

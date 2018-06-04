@@ -1,6 +1,5 @@
-package io.github.oefff.acceptance.step
+package io.github.oefff.acceptance.steps.gui
 
-import io.github.oefff.acceptance.webdriver.AbstractWebdriverStep
 import mu.KotlinLogging
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.springframework.beans.factory.annotation.Value

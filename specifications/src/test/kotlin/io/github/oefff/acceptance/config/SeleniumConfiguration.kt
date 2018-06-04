@@ -1,4 +1,4 @@
-package io.github.oefff.acceptance.webdriver
+package io.github.oefff.acceptance.config
 
 
 import io.github.bonigarcia.wdm.WebDriverManager.chromedriver

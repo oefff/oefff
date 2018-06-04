@@ -1,9 +1,9 @@
-package io.github.oefff.acceptance.step
+package io.github.oefff.acceptance.steps.api
 
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import cucumber.api.java8.En
-import io.github.oefff.acceptance.OefffFeature
+import io.github.oefff.acceptance.steps.gui.Homepage
 import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.client.RestTemplate

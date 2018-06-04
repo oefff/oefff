@@ -1,4 +1,4 @@
-package io.github.oefff.acceptance.step
+package io.github.oefff.acceptance.steps.local
 
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.hasElement

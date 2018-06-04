@@ -1,4 +1,4 @@
-package io.github.oefff.acceptance.webdriver
+package io.github.oefff.acceptance.steps.gui
 
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement

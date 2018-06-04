@@ -1,4 +1,4 @@
-package io.github.oefff.acceptance.step
+package io.github.oefff.acceptance.steps
 
 import cucumber.api.java8.En
 import mu.KotlinLogging
