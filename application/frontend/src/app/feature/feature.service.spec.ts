@@ -1,10 +1,10 @@
 import {inject, TestBed} from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {HttpClient} from '@angular/common/http';
 
 import {Feature, FeatureService, FeatureServiceImpl} from './feature.service';
 import {OefffBackend} from "../oefff.backend";
-import {ProjectService} from "../project/project-service";
+import {RouterTestingModule} from "@angular/router/testing";
 
 
 describe('FeatureService', () => {
@@ -15,7 +15,7 @@ describe('FeatureService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
+            imports: [HttpClientTestingModule, RouterTestingModule],
             providers: [
                 {provide: 'FeatureService', useClass: FeatureServiceImpl},
                 OefffBackend]
@@ -30,10 +30,10 @@ describe('FeatureService', () => {
 
     it('should cast the response to a Feature', inject(['FeatureService'], (featureService: FeatureService) => {
 
-        const mockFeature: Feature = {name: 'Read a feature from the HTTP Backend'};
-        let feature : Feature = {name: ""};
+        const mockFeature: Feature = {name: 'Read a feature from the HTTP Backend', description:'', children:[]};
+        let feature : Feature = {name: "", description: '', children:[]};
 
-        let featureObservable = featureService.getFeature("http" ,"readFeatureFromServer");
+        let featureObservable = featureService.getFeature("oefff", "http" ,"readFeatureFromServer");
         featureObservable.subscribe(data => feature = data);
 
 

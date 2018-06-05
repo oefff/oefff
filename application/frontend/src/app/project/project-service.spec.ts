@@ -1,9 +1,12 @@
 import {inject, TestBed} from '@angular/core/testing';
 
+import {BrowserModule} from '@angular/platform-browser';
+
 import {Project, ProjectService, ProjectServiceImpl, TEST_PROJECTS} from './project-service';
 import {HttpClient} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import {OefffBackend} from "../oefff.backend";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('ProjectService', () => {
 
@@ -12,7 +15,11 @@ describe('ProjectService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
+            imports: [
+                BrowserModule,
+                HttpClientTestingModule,
+                RouterTestingModule,
+                ],
             providers: [{provide: 'ProjectService', useClass: ProjectServiceImpl }, OefffBackend]
         });
 

@@ -1,32 +1,16 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
-import { RouterModule, Routes } from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {FeatureService, FeatureServiceImpl} from './feature/feature.service';
 import {FeatureDetailDisplayComponent} from './feature/display/feature-detail-display.component';
 import {OefffBackend} from "./oefff.backend";
 import {EpicListComponent} from './epic/epic-list.component';
-import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
+import {ProjectDetailComponent} from './project/project-detail/project-detail.component';
 import {ProjectServiceImpl} from "./project/project-service";
 import {ProjectsOverviewComponent} from "./project/projects-overview/projects-overview.component";
-
-
-const appRoutes: Routes = [
-    { path: 'projects/:project/:epic/:feature', component: FeatureDetailDisplayComponent },
-    { path: 'projects/:id',      component: ProjectDetailComponent },
-    {
-        path: 'projects',
-        component: ProjectsOverviewComponent,
-        data: { title: 'Projects' }
-    },
-    { path: '',
-        redirectTo: '/projects',
-        pathMatch: 'full'
-    },
-    { path: '**', redirectTo: '/projects' }
-];
+import {OefffRoutingModule} from "./oefff-routing.module";
 
 
 @NgModule({
@@ -40,10 +24,7 @@ const appRoutes: Routes = [
     imports: [
         BrowserModule,
         HttpClientModule,
-        RouterModule.forRoot(
-            appRoutes,
-            { enableTracing: true } // <-- debugging purposes: Switch to true
-        ),
+        OefffRoutingModule,
     ],
     providers: [
         OefffBackend,
