@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import {FeatureDetailDisplayComponent} from "./feature/feature-detail-display.component";
 import {FeatureService, MockFeatureService} from "./feature/feature.service";
 import {EpicListComponent} from "./epic/epic-list.component";
-import {EpicService, MockEpicService} from "./epic/epic-service";
+import {EpicService, MockEpicService} from "./epic/epic";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

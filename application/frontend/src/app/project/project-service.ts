@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
 import {OefffBackend} from "../oefff.backend";
 import {FeatureInfo} from "../feature/feature.service";
-import {EpicInfo} from "../epic/epic-service";
+import {EpicInfo} from "../epic/epic";
 
 export interface ProjectService {
     getProjects() : Observable<Project[]>

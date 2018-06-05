@@ -8,7 +8,6 @@ import {FeatureService, FeatureServiceImpl} from './feature/feature.service';
 import {FeatureDetailDisplayComponent} from './feature/feature-detail-display.component';
 import {OefffBackend} from "./oefff.backend";
 import {EpicListComponent} from './epic/epic-list.component';
-import {EpicService} from "./epic/epic-service";
 import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
 import {ProjectServiceImpl} from "./project/project-service";
 import {ProjectsOverviewComponent} from "./project/projects-overview/projects-overview.component";
@@ -47,7 +46,6 @@ const appRoutes: Routes = [
     ],
     providers: [
         OefffBackend,
-        EpicService,
         {provide: 'FeatureService', useClass: FeatureServiceImpl},
         {provide: 'ProjectService', useClass: ProjectServiceImpl},
         ],

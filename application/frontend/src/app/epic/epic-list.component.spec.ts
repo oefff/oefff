@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {EpicListComponent} from './epic-list.component';
-import {EpicService, MockEpicService} from "./epic-service";
+import {EpicService, MockEpicService} from "./epic";
 
 describe('EpicListComponent', () => {
   let component: EpicListComponent;
