@@ -28,8 +28,8 @@ class ReadFeatureFile(
         When("^Marco selects the '(.*)' feature for review$") { name : String ->
 
             when(name) {
-                "displayFeature" -> url = "/api/feature/review/$name"
-                "configureProject" -> url = "/api/feature/configuration/$name"
+                "displayFeature" -> url = "/api/projects/oefff/epics/review/features/$name"
+                "configureProject" -> url = "/api/projects/oefff/epics/configuration/features/$name"
             }
 
         }

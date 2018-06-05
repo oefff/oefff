@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("feature")
+@RequestMapping("projects")
 class FeatureController(private val featureService: FeatureService) {
 
     private val logger = KotlinLogging.logger {  }
 
-    @GetMapping("/{epic}/{feature}")
+    @GetMapping("/{projectName}/epics/{epicName}/features/{feature}")
     fun reviewFeature(
-            @PathVariable epic: String,
-            @PathVariable feature: String): Feature {
+            @PathVariable projectName: String,
+            @PathVariable epicName: String,
+            @PathVariable featureName: String): Feature {
 
-        val featureName = "$epic/$feature"
-        logger.info("Going to retrieve feature: $featureName")
+        logger.info("Going to retrieve feature: $epicName/$featureName")
 
-        return featureService.read("oefff", epic, feature)
+        return featureService.read("oefff", epicName, featureName)
     }
 }
