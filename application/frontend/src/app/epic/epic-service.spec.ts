@@ -34,7 +34,7 @@ describe('EpicService', () => {
 
         let featureObservable = epicService.getEpics();
         featureObservable.subscribe(data => epics = data);
-        const getRequestForFeature = httpTestingController.expectOne('http://localhost:8080/api/epic');
+        const getRequestForFeature = httpTestingController.expectOne('http://localhost:8080/api/projects/oefff/epics');
 
         // Assert that the request is a GET.
         expect(getRequestForFeature.request.method).toEqual('GET');

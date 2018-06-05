@@ -11,7 +11,7 @@ export class EpicService {
     }
 
     getEpics() : Observable<Epic[]> {
-        return this.httpClient.get<Epic[]>(this.oefffBackend.URL + "api/epic");
+        return this.httpClient.get<Epic[]>(this.oefffBackend.URL + "api/projects/oefff/epics");
     }
 
 }

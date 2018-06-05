@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {Feature, FeatureService} from "../service/feature.service";
 
 @Component({
@@ -10,12 +10,12 @@ export class FeatureDetailDisplayComponent implements OnInit {
 
   feature: Feature;
 
-  constructor(private featureService: FeatureService) {
+  constructor(@Inject('FeatureService') private featureService: FeatureService) {
 
   }
 
   ngOnInit() {
-    this.featureService.getFeature("review/displayFeature")
+    this.featureService.getFeature("review" ,"displayFeature")
         .subscribe(data => this.feature = data)
   }
 

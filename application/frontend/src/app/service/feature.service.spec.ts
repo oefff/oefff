@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 
-import {Feature, FeatureService} from './feature.service';
+import {Feature, FeatureService, FeatureServiceImpl} from './feature.service';
 import {OefffBackend} from "../oefff.backend";
 
 
@@ -16,13 +16,13 @@ describe('FeatureService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [HttpClientTestingModule],
-            providers: [FeatureService, OefffBackend]
+            providers: [FeatureServiceImpl, OefffBackend]
         });
 
         // Inject the http service and test controller for each test
         httpClient = TestBed.get(HttpClient);
         httpTestingController = TestBed.get(HttpTestingController);
-        featureService = TestBed.get(FeatureService)
+        featureService = TestBed.get(FeatureServiceImpl)
 
     });
 
@@ -33,9 +33,9 @@ describe('FeatureService', () => {
         let feature : Feature = {name: ""};
 
 
-        let featureObservable = featureService.getFeature("http/readFeatureFromServer");
+        let featureObservable = featureService.getFeature("http" ,"readFeatureFromServer");
         featureObservable.subscribe(data => feature = data);
-        const getRequestForFeature = httpTestingController.expectOne('http://localhost:8080/api/feature/http/readFeatureFromServer');
+        const getRequestForFeature = httpTestingController.expectOne('http://localhost:8080/api/projects/http/features/readFeatureFromServer');
 
         // Assert that the request is a GET.
         expect(getRequestForFeature.request.method).toEqual('GET');
