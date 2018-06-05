@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Feature} from "../feature-detail-display/feature.service";
+import {Feature} from "../feature/feature.service";
 import {Observable} from "rxjs/Observable";
 import {OefffBackend} from "../oefff.backend";
 
@@ -14,6 +14,10 @@ export class EpicService {
         return this.httpClient.get<Epic[]>(this.oefffBackend.URL + "api/projects/oefff/epics");
     }
 
+}
+
+export interface EpicInfo {
+    name: String,
 }
 
 

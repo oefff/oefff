@@ -17,11 +17,15 @@ export class FeatureServiceImpl implements FeatureService {
 
     getFeature(epicName: string, featureName: string) : Observable<Feature> {
         var projectName = "oefff";
-        return this.httpClient.get<Feature>(this.oefffBackend.URL + "api/projects/" + projectName + "/epics/" + epicName + "/features/" + featureName)
+        let url = this.oefffBackend.URL + "api/projects/" + projectName + "/epics/" + epicName + "/features/" + featureName;
+
+        return this.httpClient.get<Feature>(url)
     }
 }
 
-
+export interface FeatureInfo {
+    name: String,
+}
 export interface Feature {
     name: String,
 }

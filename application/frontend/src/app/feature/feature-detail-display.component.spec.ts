@@ -13,7 +13,7 @@ describe('FeatureDetailDisplayComponent', () => {
       declarations: [ FeatureDetailDisplayComponent ],
         providers: [
             {
-              provide: FeatureService, useValue: mockFeatureService
+              provide: 'FeatureService', useValue: mockFeatureService
             }
         ]
     })
