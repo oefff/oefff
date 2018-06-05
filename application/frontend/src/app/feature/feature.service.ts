@@ -5,7 +5,7 @@ import {Observable, of} from "rxjs";
 import {OefffBackend} from "../oefff.backend";
 
 export interface FeatureService {
-    getFeature(epicName: string, featureName: string) : Observable<Feature>;
+    getFeature(projectName: string, epicName: string, featureName: string) : Observable<Feature>;
 }
 
 
@@ -15,8 +15,7 @@ export class FeatureServiceImpl implements FeatureService {
     constructor(private httpClient: HttpClient, private oefffBackend : OefffBackend) {
     }
 
-    getFeature(epicName: string, featureName: string) : Observable<Feature> {
-        var projectName = "oefff";
+    getFeature(projectName: string, epicName: string, featureName: string) {
         let url = this.oefffBackend.URL + "api/projects/" + projectName + "/epics/" + epicName + "/features/" + featureName;
 
         return this.httpClient.get<Feature>(url)
@@ -41,7 +40,7 @@ export class MockFeatureService implements FeatureService {
     constructor(private feature: Feature) {
     }
 
-    getFeature(epicName: string, featureName: string) : Observable<Feature> {
+    getFeature(projectName: string, epicName: string, featureName: string) : Observable<Feature> {
         return of(this.feature);
     }
 }

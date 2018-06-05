@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {FeatureDetailDisplayComponent} from "./feature/feature-detail-display.component";
+import {FeatureDetailDisplayComponent} from "./feature/display/feature-detail-display.component";
 import {FeatureService, MockFeatureService} from "./feature/feature.service";
 import {EpicListComponent} from "./epic/epic-list.component";
 import {EpicService, MockEpicService} from "./epic/epic";

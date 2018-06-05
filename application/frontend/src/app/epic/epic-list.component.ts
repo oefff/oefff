@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Epic} from "./epic";
+import {Project} from "../project/project-service";
 
 @Component({
   selector: 'epic-list',
@@ -8,7 +9,7 @@ import {Epic} from "./epic";
 })
 export class EpicListComponent implements OnInit {
 
-
+  @Input('project') project: Project;
   @Input('epics') epics: Epic[];
 
   constructor() { }

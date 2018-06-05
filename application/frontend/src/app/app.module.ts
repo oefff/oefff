@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {FeatureService, FeatureServiceImpl} from './feature/feature.service';
-import {FeatureDetailDisplayComponent} from './feature/feature-detail-display.component';
+import {FeatureDetailDisplayComponent} from './feature/display/feature-detail-display.component';
 import {OefffBackend} from "./oefff.backend";
 import {EpicListComponent} from './epic/epic-list.component';
 import { ProjectDetailComponent } from './project/project-detail/project-detail.component';
@@ -14,7 +14,8 @@ import {ProjectsOverviewComponent} from "./project/projects-overview/projects-ov
 
 
 const appRoutes: Routes = [
-    { path: 'project/:id',      component: ProjectDetailComponent },
+    { path: 'projects/:project/:epic/:feature', component: FeatureDetailDisplayComponent },
+    { path: 'projects/:id',      component: ProjectDetailComponent },
     {
         path: 'projects',
         component: ProjectsOverviewComponent,
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: false } // <-- debugging purposes: Switch to true
+            { enableTracing: true } // <-- debugging purposes: Switch to true
         ),
     ],
     providers: [

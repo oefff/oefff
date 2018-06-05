@@ -1,11 +1,14 @@
 <h2>All Epics</h2>
 <ol>
-  <li *ngFor="let epic of epics"><span class="epic"> {{epic.name}}</span>
-    <ul>
-      <li *ngFor="let feature of epic.features" class="feature">{{feature.name}}</li>
-    </ul>
-  </li>
-
+    <li *ngFor="let epic of epics"><span class="epic"> {{epic.name}}</span>
+        <ul>
+            <li *ngFor="let feature of epic.features" class="feature">
+                <a [routerLink]="['/projects/' + project.name + '/' + epic.name + '/', feature.name]">
+                    {{feature.name}}
+                </a>
+            </li>
+        </ul>
+    </li>
 </ol>
 
 

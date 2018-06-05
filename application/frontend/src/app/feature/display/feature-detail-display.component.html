@@ -1,0 +1,11 @@
+<button  routerLink="../..">Back to the project</button>
+
+<div *ngIf="feature">
+    <h3>Feature: {{feature.name}}</h3>
+    <strong>{{feature.description}}</strong>
+
+    <ul>
+        <li *ngFor="let child of feature.children">Scenario: {{child.name}}</li>
+    </ul>
+</div>
+

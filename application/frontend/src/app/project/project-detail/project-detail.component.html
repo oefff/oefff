@@ -2,9 +2,9 @@
 
   <h3>{{project.name}}</h3>
 
-  <epic-list [epics]=project.epicNames></epic-list>
-
-  <feature-detail-display></feature-detail-display>
+  <epic-list
+          [project]="project"
+          [epics]="project.epicNames"></epic-list>
 
 </div>
 
