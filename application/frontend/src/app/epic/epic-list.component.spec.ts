@@ -1,7 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {EpicListComponent} from './epic-list.component';
-import {EpicService, MockEpicService} from "./epic";
 
 describe('EpicListComponent', () => {
   let component: EpicListComponent;
@@ -9,14 +8,8 @@ describe('EpicListComponent', () => {
 
 
     beforeEach(async(() => {
-        let mockEpicService = new MockEpicService();
         TestBed.configureTestingModule({
             declarations: [ EpicListComponent ],
-            providers: [
-                {
-                    provide: EpicService, useValue: mockEpicService
-                }
-            ]
         })
             .compileComponents();
     }));

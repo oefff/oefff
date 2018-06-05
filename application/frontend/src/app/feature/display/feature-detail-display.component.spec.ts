@@ -8,7 +8,7 @@ describe('FeatureDetailDisplayComponent', () => {
   let fixture: ComponentFixture<FeatureDetailDisplayComponent>;
 
   beforeEach(async(() => {
-      let mockFeatureService = new MockFeatureService({name: 'Mocked That Thing!'});
+      let mockFeatureService = new MockFeatureService({name: 'Mocked That Thing!', description:'', children: []});
       TestBed.configureTestingModule({
       declarations: [ FeatureDetailDisplayComponent ],
         providers: [

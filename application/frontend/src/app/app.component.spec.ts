@@ -3,12 +3,10 @@ import { AppComponent } from './app.component';
 import {FeatureDetailDisplayComponent} from "./feature/display/feature-detail-display.component";
 import {FeatureService, MockFeatureService} from "./feature/feature.service";
 import {EpicListComponent} from "./epic/epic-list.component";
-import {EpicService, MockEpicService} from "./epic/epic";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
-      const mockFeatureService = new MockFeatureService({name: 'Mocked That Thing'});
-      let mockEpicService = new MockEpicService();
+      const mockFeatureService = new MockFeatureService({name: 'Mocked That Thing', description:'', children: []});
 
       TestBed.configureTestingModule({
       declarations: [
@@ -16,7 +14,7 @@ describe('AppComponent', () => {
       ],
         providers: [
             { provide: 'FeatureService', useValue: mockFeatureService },
-            { provide: EpicService, useValue: mockEpicService },
+
         ],
     }).compileComponents();
   }));
