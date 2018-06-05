@@ -7,6 +7,8 @@ import {EpicInfo} from "../epic/epic-service";
 
 export interface ProjectService {
     getProjects() : Observable<Project[]>
+
+    getProject(id: string): Observable<Project>;
 }
 
 
@@ -18,6 +20,10 @@ export class ProjectServiceImpl implements ProjectService {
 
     getProjects() : Observable<Project[]> {
         return this.httpClient.get<Project[]>(this.oefffBackend.URL + "api/projects");
+    }
+
+    getProject(id: string): Observable<Project> {
+        return this.httpClient.get<Project>(this.oefffBackend.URL + "api/projects/" + id);
     }
 
 }
@@ -34,6 +40,10 @@ export class MockProjectService implements ProjectService {
 
     getProjects() {
         return of(TEST_PROJECTS);
+    }
+
+    getProject(id: string): Observable<Project> {
+        return of(TEST_PROJECTS.filter((project) => project.name == id)[0]);
     }
 }
 

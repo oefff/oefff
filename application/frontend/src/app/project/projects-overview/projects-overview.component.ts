@@ -3,10 +3,10 @@ import {Project, ProjectService} from "../project-service";
 
 @Component({
   selector: 'projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  templateUrl: './projects-overview.component.html',
+  styleUrls: ['./projects-overview.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsOverviewComponent implements OnInit {
 
     projects : Project[];
 

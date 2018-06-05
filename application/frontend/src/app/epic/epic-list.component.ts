@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Epic, EpicService} from "./epic-service";
+import {Component, Input, OnInit} from '@angular/core';
+import {EpicInfo} from "./epic-service";
 
 @Component({
   selector: 'epic-list',
@@ -8,14 +8,13 @@ import {Epic, EpicService} from "./epic-service";
 })
 export class EpicListComponent implements OnInit {
 
-  epics : Epic[];
 
-  constructor(private epicService: EpicService) { }
+  @Input('epics') epics: EpicInfo[];
+
+  constructor() { }
 
 
   ngOnInit() {
-      this.epicService.getEpics()
-          .subscribe(data => this.epics = data)
 
   }
 

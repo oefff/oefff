@@ -1,4 +1,14 @@
 <h3>Show me the feature!</h3>
 
 
-<pre>{{feature.name}}</pre>
+<div *ngIf="feature">
+    <pre>{{feature.name}}</pre>
+    <strong>{{feature.description}}</strong>
+
+    <ul>
+        <li *ngFor="let child of feature.children">{{child.name}}</li>
+    </ul>
+
+
+</div>
+

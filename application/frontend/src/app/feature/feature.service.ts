@@ -28,8 +28,13 @@ export interface FeatureInfo {
 }
 export interface Feature {
     name: String,
+    description: String,
+    children: Scenario[]
 }
 
+export interface Scenario {
+    name: String
+}
 
 export class MockFeatureService implements FeatureService {
 

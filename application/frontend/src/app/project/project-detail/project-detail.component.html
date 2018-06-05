@@ -1,0 +1,10 @@
+<div *ngIf="project">
+
+  <h3>{{project.name}}</h3>
+
+  <epic-list [epics]=project.epicNames></epic-list>
+
+  <feature-detail-display></feature-detail-display>
+
+</div>
+
