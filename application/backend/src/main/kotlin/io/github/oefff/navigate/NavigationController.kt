@@ -2,7 +2,6 @@ package io.github.oefff.navigate
 
 import gherkin.ast.Feature
 import io.github.oefff.api.Epic
-import io.github.oefff.api.EpicInfo
 import io.github.oefff.api.FeatureInfo
 import io.github.oefff.api.Project
 import io.github.oefff.review.FeatureService
@@ -38,7 +37,7 @@ class NavigationController(
     @GetMapping("/{projectName}/epics")
     fun listEpicsInProject(
             @PathVariable projectName: String)
-            : List<EpicInfo> = featureService.listEpicsInProject(projectName)
+            : List<Epic> = featureService.listEpicsInProject(projectName)
 
 
     @GetMapping("/{projectName}/epics/{epicName}")

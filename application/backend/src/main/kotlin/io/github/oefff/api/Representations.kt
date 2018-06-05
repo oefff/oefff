@@ -2,11 +2,8 @@ package io.github.oefff.api
 
 data class Project(
         val name: String,
-        val epicNames: List<EpicInfo> = emptyList(),
+        val epicNames: List<Epic> = emptyList(),
         val featureNames: List<FeatureInfo> = emptyList())
-
-data class EpicInfo(val name: String)
-
 
 data class Epic(
         val name: String,

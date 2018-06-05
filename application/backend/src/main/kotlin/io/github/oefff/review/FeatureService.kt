@@ -6,7 +6,6 @@ import gherkin.TokenMatcher
 import gherkin.ast.Feature
 import gherkin.ast.GherkinDocument
 import io.github.oefff.api.Epic
-import io.github.oefff.api.EpicInfo
 import io.github.oefff.api.FeatureInfo
 import io.github.oefff.project.readConfig
 import io.github.oefff.workspace.WorkspaceLocationConfiguration
@@ -48,17 +47,17 @@ class FeatureService(private val workspaceLocationConfiguration: WorkspaceLocati
 
     }
 
-    fun listEpicsInProject(projectName: String) : List<EpicInfo> {
+    fun listEpicsInProject(projectName: String) : List<Epic> {
 
         val projectDirectory = File(workspaceLocation + projectName)
         return listEpicsInProject(projectDirectory)
     }
 
-    fun listEpicsInProject(projectDirectory: File): List<EpicInfo> {
+    fun listEpicsInProject(projectDirectory: File): List<Epic> {
         val pathToSpecifications = readConfig(projectDirectory).specificationPath
         return File(projectDirectory.absolutePath + "/" + pathToSpecifications).listFiles()
                 .filter { it.isDirectory }
-                .map {EpicInfo(it.name)}
+                .map {Epic(it.name, listFeatures(it))}
     }
 
 

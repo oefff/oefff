@@ -5,7 +5,7 @@ import com.natpryce.hamkrest.assertion.assert
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import com.natpryce.hamkrest.has
-import io.github.oefff.api.EpicInfo
+import io.github.oefff.api.Epic
 import io.github.oefff.workspace.WorkspaceLocationConfiguration
 import org.junit.Test
 
@@ -27,8 +27,8 @@ class FeatureServiceTest {
     fun `it should list all epics`() {
         val epics = featureService.listEpicsInProject("oefff")
 
-        assertThat(epics, anyElement(has(EpicInfo::name, equalTo("configuration"))))
-        assertThat(epics, anyElement(has(EpicInfo::name, equalTo("navigate"))))
+        assertThat(epics, anyElement(has(Epic::name, equalTo("configuration"))))
+        assertThat(epics, anyElement(has(Epic::name, equalTo("navigate"))))
 
 
     }
