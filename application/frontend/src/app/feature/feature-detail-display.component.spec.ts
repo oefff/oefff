@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FeatureDetailDisplayComponent } from './feature-detail-display.component';
-import {FeatureService, MockFeatureService} from "../service/feature.service";
+import {FeatureService, MockFeatureService} from "./feature.service";
 
 describe('FeatureDetailDisplayComponent', () => {
   let component: FeatureDetailDisplayComponent;

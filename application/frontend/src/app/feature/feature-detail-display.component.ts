@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Feature, FeatureService} from "../service/feature.service";
+import {Feature, FeatureService} from "./feature.service";
 
 @Component({
   selector: 'feature-detail-display',

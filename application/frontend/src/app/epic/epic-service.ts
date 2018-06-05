@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Feature} from "../service/feature.service";
+import {Feature} from "../feature-detail-display/feature.service";
 import {Observable} from "rxjs/Observable";
 import {OefffBackend} from "../oefff.backend";
 
