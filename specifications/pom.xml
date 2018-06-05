@@ -209,7 +209,7 @@
                                 <argument>--server.port=${server.http.port}</argument>
                                 <argument>--spring.profiles.active=local</argument>
                             </arguments>
-                            <healthcheckUrl>http://localhost:${server.http.port}/api/feature/review/displayFeature</healthcheckUrl>
+                            <healthcheckUrl>http://localhost:${server.http.port}/api/projects/oefff/epics/review/features/displayFeature</healthcheckUrl>
                         </configuration>
                     </execution>
                     <!--Stop Process-->

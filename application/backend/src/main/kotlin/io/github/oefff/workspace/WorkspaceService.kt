@@ -25,12 +25,12 @@ class WorkspaceService(
 
     private fun parseProject(projectDirectory: File) : Project {
 
-        val epics = featureService.listEpics(projectDirectory)
-        val features = featureService.listFeatureNames(projectDirectory)
+        val epicNames = featureService.listEpicsInProject(projectDirectory)
+        val featureNames = featureService.listFeatures(projectDirectory)
 
         return Project(name = projectDirectory.name,
-                epics = epics,
-                featureNames = features)
+                epicNames = epicNames,
+                featureNames = featureNames)
     }
 
     fun readProject(projectName: String): Project {

@@ -6,6 +6,8 @@ import gherkin.TokenMatcher
 import gherkin.ast.Feature
 import gherkin.ast.GherkinDocument
 import io.github.oefff.api.Epic
+import io.github.oefff.api.EpicInfo
+import io.github.oefff.api.FeatureInfo
 import io.github.oefff.project.readConfig
 import io.github.oefff.workspace.WorkspaceLocationConfiguration
 import mu.KotlinLogging
@@ -46,26 +48,51 @@ class FeatureService(private val workspaceLocationConfiguration: WorkspaceLocati
 
     }
 
-    fun listEpicsInProject(projectName: String) : List<Epic> {
+    fun listEpicsInProject(projectName: String) : List<EpicInfo> {
 
         val projectDirectory = File(workspaceLocation + projectName)
-        return listEpics(projectDirectory)
+        return listEpicsInProject(projectDirectory)
     }
 
-    fun listEpics(projectDirectory: File): List<Epic> {
+    fun listEpicsInProject(projectDirectory: File): List<EpicInfo> {
         val pathToSpecifications = readConfig(projectDirectory).specificationPath
         return File(projectDirectory.absolutePath + "/" + pathToSpecifications).listFiles()
                 .filter { it.isDirectory }
-                .map {
-                    Epic(it.name, listFeatureNames(it))
-
-                }
+                .map {EpicInfo(it.name)}
     }
 
 
-    fun listFeatureNames(directory: File): List<String> {
-        logger.debug("Going to fetch all featureNames from ${directory.name}")
-        return directory.list(SuffixFileFilter(EXTENTION)).asList().map { it.substringBefore(EXTENTION) }
+    fun readEpicInProject(projectName: String, epicName: String): Epic {
+        val epicDirectory = determineEpicDirectory(projectName, epicName)
+
+        return Epic(
+                name = epicName,
+                features = listFeatures(epicDirectory)
+        )
+
+    }
+
+    fun listFeatureOfEpic(projectName: String, epicName: String): List<FeatureInfo> {
+        val epicDirectory = determineEpicDirectory(projectName, epicName)
+        return listFeatures(epicDirectory)
+
+    }
+
+    fun listFeatures(epicDirectory: File): List<FeatureInfo> {
+        logger.debug("Going to fetch all featureNames from ${epicDirectory.name}")
+        return epicDirectory
+                .list(SuffixFileFilter(EXTENTION))
+                .asList()
+                .map { FeatureInfo(it.substringBefore(EXTENTION)) }
+    }
+
+
+
+    private fun determineEpicDirectory(projectName: String, epicName: String): File {
+        val projectDirectory = File(workspaceLocation + projectName)
+        val pathToSpecifications = readConfig(projectDirectory).specificationPath
+        val epicDirectory = File(projectDirectory.absolutePath + "/" + pathToSpecifications + "/" + epicName)
+        return epicDirectory
     }
 
 }

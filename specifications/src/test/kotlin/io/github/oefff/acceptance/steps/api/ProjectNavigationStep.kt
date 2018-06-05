@@ -26,6 +26,8 @@ class ProjectNavigationStep( private val fetcher: OefffFetcher) : En {
 
         Then("Marco should be able to select of project '(.*)'") { projectName : String ->
 
+
+
             val projects : List<Project> = fetcher.fetch(url, listOfProjectsResponseType)
 
             assertThat(projects, anyElement(has(Project::name, equalTo(projectName))))

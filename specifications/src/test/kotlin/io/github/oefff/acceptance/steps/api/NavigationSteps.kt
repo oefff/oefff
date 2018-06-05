@@ -2,7 +2,7 @@ package io.github.oefff.acceptance.steps.api
 
 import com.natpryce.hamkrest.allElements
 import com.natpryce.hamkrest.assertion.assertThat
-import com.natpryce.hamkrest.isIn
+import com.natpryce.hamkrest.isIn as arePresentIn
 import cucumber.api.DataTable
 import cucumber.api.java8.En
 import io.github.oefff.api.Epic
@@ -16,7 +16,7 @@ class NavigationSteps(private val fetcher: OefffFetcher) : En {
 
     init {
         When("Marco looks at the epic overview of '(.*)'") { projectName: String ->
-            url = "/api/$projectName/epic"
+            url = "/api/$projectName/epics"
         }
 
 
@@ -34,5 +34,4 @@ class NavigationSteps(private val fetcher: OefffFetcher) : En {
 
 }
 
-private inline fun <T> arePresentIn(it: Iterable<T>) = isIn(it)
-private inline fun asStrings(it: DataTable) : List<String> = it.asList(String::class.java)
+private fun asStrings(it: DataTable) : List<String> = it.asList(String::class.java)
