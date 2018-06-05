@@ -9,6 +9,7 @@ import {FeatureDetailDisplayComponent} from './feature/feature-detail-display.co
 import {OefffBackend} from "./oefff.backend";
 import {EpicListComponent} from './epic/epic-list.component';
 import {EpicService} from "./epic/epic-service";
+import { ProjectsComponent } from './project/projects/projects.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {EpicService} from "./epic/epic-service";
         AppComponent,
         FeatureDetailDisplayComponent,
         EpicListComponent,
+        ProjectsComponent,
     ],
     imports: [
         BrowserModule,

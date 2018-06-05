@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
+import {Observable, of} from "rxjs";
 import {OefffBackend} from "../oefff.backend";
 import {FeatureInfo} from "../feature/feature.service";
 import {EpicInfo} from "../epic/epic-service";
@@ -33,7 +33,7 @@ export class MockProjectService implements ProjectService {
     private : any;
 
     getProjects() {
-        return Observable.of(TEST_PROJECTS);
+        return of(TEST_PROJECTS);
     }
 }
 

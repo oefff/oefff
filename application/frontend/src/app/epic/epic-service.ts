@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Feature} from "../feature/feature.service";
-import {Observable} from "rxjs/Observable";
+import {Observable, of} from "rxjs";
 import {OefffBackend} from "../oefff.backend";
 
 @Injectable()
@@ -32,7 +32,7 @@ export class MockEpicService extends EpicService {
         super(null, null)
     }
     getEpics() {
-        return Observable.of(TEST_EPICS);
+        return of(TEST_EPICS);
     }
 }
 
