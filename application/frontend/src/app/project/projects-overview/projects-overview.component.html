@@ -1,7 +1,12 @@
 <mat-card>
-    <h2>Projects</h2>
 
-        <div [hidden]="!loading">
+    <mat-card-title fxLayout="row">
+        <div fxFlex="80">Projects</div>
+    </mat-card-title>
+
+    <mat-card-content>
+
+    <div [hidden]="!loading">
             <h3>Loading</h3>
         </div>
         <div [hidden]="loading">
@@ -29,6 +34,7 @@
 
         </mat-card-actions>
 
+    </mat-card-content>
 </mat-card>
 
 
