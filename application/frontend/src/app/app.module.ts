@@ -11,6 +11,8 @@ import {ProjectDetailComponent} from './project/project-detail/project-detail.co
 import {ProjectServiceImpl} from "./project/project-service";
 import {ProjectsOverviewComponent} from "./project/projects-overview/projects-overview.component";
 import {OefffRoutingModule} from "./oefff-routing.module";
+import {OefffMaterialModule} from "./oefff-material-module";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import {OefffRoutingModule} from "./oefff-routing.module";
     imports: [
         BrowserModule,
         HttpClientModule,
+        FlexLayoutModule,
         OefffRoutingModule,
+        OefffMaterialModule,
     ],
     providers: [
         OefffBackend,

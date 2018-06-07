@@ -1,11 +1,30 @@
-<button  routerLink="../..">Back to the project</button>
+<mat-card>
 
-<div *ngIf="feature">
-    <h3>Feature: {{feature.name}}</h3>
-    <strong>{{feature.description}}</strong>
+    <div *ngIf="feature">
+        <mat-card-title fxLayout="row">
+            <span fxFlex="80">Feature: {{feature.name}}</span>
+            <span fxFlex></span>
+            <button mat-icon-button fxFlex="" routerLink="../..">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-card-title>
 
-    <ul>
-        <li *ngFor="let child of feature.children">Scenario: {{child.name}}</li>
-    </ul>
-</div>
+        <mat-card-content>
+
+            <dl>
+                <dt>In order to&nbsp;</dt>
+                <dd>{{feature.userStory.purpose}}</dd>
+                <dt>As a&nbsp;</dt>
+                <dd>{{feature.userStory.actor}}</dd>
+                <dt>I want to&nbsp;</dt>
+                <dd>{{feature.userStory.action}}</dd>
+            </dl>
+
+
+
+
+            <mat-card *ngFor="let child of feature.children">Scenario: {{child.name}}</mat-card>
+        </mat-card-content>
+    </div>
+</mat-card>
 

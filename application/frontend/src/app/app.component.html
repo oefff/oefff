@@ -1,8 +1,17 @@
-<nav>
-  <ul>
-    <li><a routerLink="/projects" routerLinkActive="active">Projects Overview</a></li>
-  </ul>
-</nav>
+<div>
+  <mat-toolbar color="primary">
+    <span><mat-icon>feeback</mat-icon></span>
+
+    <span>{{title}}</span>
+
+    <span>
+      <button mat-button routerLink="/projects" routerLinkActive="active">Projects Overview</button>
+    </span>
+
+  </mat-toolbar>
+
+</div>
+
 
 <router-outlet></router-outlet>
 

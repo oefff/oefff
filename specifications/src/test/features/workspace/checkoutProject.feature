@@ -1,8 +1,8 @@
 Feature: Clone a git repository in to the local workspace
 
   In order to be start using Oefff for a project
-  As the Lead Developer
-  I want to clone a repository into a local workspace
+         As a Lead Developer
+    I want to clone a repository into a local workspace
 
 
 Scenario: Clone Oefff in to local workspace

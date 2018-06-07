@@ -56,3 +56,6 @@ Max 5 lines in Scenario and max 1 'Then'-statement.
 * [https://github.com/angular/protractor/issues/125]
 
 
+* [https://alligator.io/angular/angular-material-2/]
+* [https://material.angular.io/components/categories]
+* [Flex Layout](https://github.com/angular/flex-layout)

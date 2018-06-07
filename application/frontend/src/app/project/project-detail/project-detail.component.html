@@ -1,6 +1,15 @@
+<mat-card>
+
 <div *ngIf="project">
 
-  <h3>{{project.name}}</h3>
+ <mat-card-title fxLayout="row">
+  <span fxFlex="80">Project: {{project.name}}</span>
+  <span fxFlex></span>
+  <button mat-icon-button fxFlex="" routerLink="..">
+   <mat-icon>close</mat-icon>
+  </button>
+ </mat-card-title>
+
 
   <epic-list
           [project]="project"
@@ -8,3 +17,4 @@
 
 </div>
 
+</mat-card>
