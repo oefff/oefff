@@ -1,14 +1,36 @@
 <mat-card>
-
-
-
-
     <h2>Projects</h2>
-    <ol>
-        <li *ngFor="let project of projects">
-            <a [routerLink]="['/projects/', project.name]">
-                <span class="project"> {{project.name}}</span>
-            </a>
-        </li>
-    </ol>
+
+        <div [hidden]="!loading">
+            <h3>Loading</h3>
+        </div>
+        <div [hidden]="loading">
+
+            <div [hidden]="!canDisplayProjectList">
+                <ol>
+                    <li *ngFor="let project of projects">
+                        <a [routerLink]="['/projects/', project.name]">
+                            <span class="project"> {{project.name}}</span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <div [hidden]="canDisplayProjectList">
+                No projects available yet in this editor.<br/>
+                Please start by Adding a Project.
+            </div>
+
+
+        </div>
+        <mat-card-actions align="end">
+            <button mat-fab color="primary">
+                <mat-icon>library_add</mat-icon>
+            </button>
+
+        </mat-card-actions>
+
 </mat-card>
+
+
+
+

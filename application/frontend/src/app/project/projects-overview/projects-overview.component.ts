@@ -8,14 +8,27 @@ import {Project, ProjectService} from "../project-service";
 })
 export class ProjectsOverviewComponent implements OnInit {
 
-    projects : Project[];
+    projects : Project[] = [];
+    loading = true;
+    canDisplayProjectList = false;
 
     constructor(@Inject('ProjectService') private projectService: ProjectService) { }
 
 
-    ngOnInit() {
+   ngOnInit() {
+
         this.projectService.getProjects()
-            .subscribe(data => this.projects = data)
+            .subscribe(data => {
+
+                this.projects = data;
+                this.canDisplayProjectList = this.projects.length > 0;
+                this.loading = false;
+
+            })
 
     }
+
+
 }
+
+
