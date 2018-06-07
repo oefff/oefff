@@ -2,9 +2,9 @@
 
     <div *ngIf="feature">
         <mat-card-title fxLayout="row">
-            <span fxFlex="80">Feature: {{feature.name}}</span>
-            <span fxFlex></span>
-            <button mat-icon-button fxFlex="" routerLink="../..">
+            <div fxFlex="auto">Feature: {{feature.name}}</div>
+            <div fxFlex=""grow></div>
+            <button mat-icon-button fxFlex="nogrow" routerLink="../..">
                 <mat-icon>close</mat-icon>
             </button>
         </mat-card-title>
