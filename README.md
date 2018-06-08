@@ -59,3 +59,6 @@ Max 5 lines in Scenario and max 1 'Then'-statement.
 * [https://alligator.io/angular/angular-material-2/]
 * [https://material.angular.io/components/categories]
 * [Flex Layout](https://github.com/angular/flex-layout)
+* [Material Icons](https://material.io/tools/icons/?icon=library_add&style=baseline)
+* [Component Developer Kit](https://material.angular.io/cdk/categories)
+** [https://hackernoon.com/a-first-look-into-the-angular-cdk-67e68807ed9b]
