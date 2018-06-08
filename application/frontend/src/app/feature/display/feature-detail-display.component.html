@@ -21,9 +21,25 @@
             </dl>
 
 
+            <mat-card *ngFor="let scenario of feature.scenarios">
+                <mat-card-title>Scenario: {{scenario.name}}</mat-card-title>
+
+                <mat-card-content>
 
 
-            <mat-card *ngFor="let child of feature.children">Scenario: {{child.name}}</mat-card>
+                    <ul>
+                        <li *ngFor="let step of scenario.steps">
+                            <strong>{{step.keyword}}</strong>
+                            {{step.text}}
+                        </li>
+                    </ul>
+
+
+
+
+                </mat-card-content>
+
+            </mat-card>
         </mat-card-content>
     </div>
 </mat-card>

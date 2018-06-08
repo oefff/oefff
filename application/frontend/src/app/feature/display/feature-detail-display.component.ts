@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Feature, FeatureService} from "../feature.service";
+import {Feature, FeatureService, Scenario} from "../feature.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {switchMap} from "rxjs/operators";
 
@@ -29,7 +29,7 @@ export class FeatureDetailDisplayComponent implements OnInit {
 
 }
 
-class FeatureWrapper implements Feature {
+class FeatureWrapper {
 
     constructor(private wrapped: Feature) {
 
@@ -38,8 +38,9 @@ class FeatureWrapper implements Feature {
     get name(): String {
         return this.wrapped.name;
     }
-    get children() {
-      return this.wrapped.children;
+    get scenarios() : Scenario[] {
+      return this.wrapped.children
+          .filter(value => value.keyword == "Scenario")
     }
     get description(): String {
         return this.wrapped.description;

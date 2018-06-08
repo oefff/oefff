@@ -31,8 +31,16 @@ export interface Feature {
     children: Scenario[]
 }
 
+export interface Step {
+    keyword: String,
+    text: String,
+
+}
+
 export interface Scenario {
-    name: String
+    keyword: String,
+    name: String,
+    steps: Step[]
 }
 
 export class MockFeatureService implements FeatureService {
