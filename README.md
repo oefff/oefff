@@ -62,3 +62,9 @@ Max 5 lines in Scenario and max 1 'Then'-statement.
 * [Material Icons](https://material.io/tools/icons/?icon=library_add&style=baseline)
 * [Component Developer Kit](https://material.angular.io/cdk/categories)
 ** [https://hackernoon.com/a-first-look-into-the-angular-cdk-67e68807ed9b]
+
+
+
+## Background
+
+* [https://medium.com/@mattwynne/who-writes-the-cucumber-scenarios-6ca5f390c2fa]
